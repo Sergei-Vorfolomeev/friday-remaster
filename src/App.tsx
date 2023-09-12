@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui'
+import { Typography } from '@/components/ui/typography'
 
 export function App() {
-  return <Button as={'a'} href={'#'} />
+  return <Typography variant={'large'}>Hello</Typography>
 }

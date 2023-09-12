@@ -16,7 +16,7 @@ export const Button = <T extends ElementType = 'button'>({
   className,
   ...rest
 }: ButtonPropsType<T> & Omit<ComponentPropsWithoutRef<T>, keyof ButtonPropsType<T>>) => {
-  const Component = as as ElementType
+  const Component = as || 'button'
 
   return (
     <Component className={`${s[variant]} ${fullWidth ? s.fullWidth : ''} ${className}`} {...rest}>
