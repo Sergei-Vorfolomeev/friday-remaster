@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui'
+
 export function App() {
-  return <div>Hello</div>
+  return <Button as={'a'} href={'#'} />
 }
