@@ -1,17 +1,113 @@
 .primary {
-  background-color: red;
+  gap: 10px;
+
+  padding: 6px 28px;
+
+  background-color: var(--color-accent-500);
+  border-radius: 4px;
+  box-shadow: 0 4px 18px rgba(var(--color-accent-500, 0.35));
+
+  &:active {
+    background-color: var(--color-accent-700);
+  }
+
+  &:hover {
+    background-color: var(--color-accent-300);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-info-700);
+  }
+
+  &:disabled {
+    background-color: var(--color-accent-900);
+  }
 }
 
 .secondary {
-  background-color: green;
+  gap: 10px;
+
+  padding: 6px 28px;
+
+  background-color: var(--color-dark-300);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(#6d6d6d, 0.25);
+
+  &:active {
+    background-color: var(--color-dark-500);
+  }
+
+  &:hover {
+    background-color: var(--color-dark-100);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-info-700);
+  }
+
+  &:disabled {
+    color: var(--color-light-300);
+    background-color: var(--color-dark-300);
+  }
 }
 
 .tertiary {
-  background-color: blue;
+  gap: 10px;
+
+  padding: 6px 28px;
+
+  color: var(--color-accent-500);
+
+  background-color: transparent;
+  border: 1px solid var(--color-accent-500);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(#6d6d6d, 0.25);
+
+  &:active {
+    background-color: var(--color-accent-900);
+    border: 1px solid var(--color-accent-700);
+  }
+
+  &:hover {
+    background-color: var(--color-dark-500);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-info-700);
+  }
+
+  &:disabled {
+    color: var(--color-accent-900);
+    border: 1px solid var(--color-accent-900);
+  }
 }
 
 .link {
-  background-color: yellow;
+  gap: 10px;
+
+  padding: 6px 28px;
+
+  color: var(--color-accent-500);
+
+  background-color: transparent;
+  border: none;
+
+  &:active {
+    color: var(--color-accent-700);
+  }
+
+  &:hover {
+    color: var(--color-accent-300);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-info-700);
+    border-radius: 50px;
+  }
+
+  &:disabled {
+    color: var(--color-accent-900);
+  }
 }
 
 .fullWidth {

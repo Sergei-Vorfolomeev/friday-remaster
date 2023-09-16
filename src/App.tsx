@@ -1,13 +1,10 @@
-import { TextField } from '@/components/ui'
+import { Button, TextField } from '@/components/ui'
+import { Typography } from '@/components/ui/typography'
 
 export function App() {
   return (
-    <TextField
-      variant={'inputWithIcon'}
-      label={'label'}
-      placeholder={'Input'}
-      disabled={false}
-      onEnter={() => {}}
-    />
+    <Button variant={'link'} disabled={true}>
+      <Typography variant={'subtitle-1'}>Button</Typography>
+    </Button>
   )
 }

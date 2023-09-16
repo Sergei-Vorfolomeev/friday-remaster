@@ -5,7 +5,19 @@ import s from './typography.module.scss'
 type TypographyType<T extends ElementType = 'span'> = {
   as?: T
   children: ReactNode
-  variant: string
+  variant:
+    | 'large'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'body-1'
+    | 'body-2'
+    | 'subtitle-1'
+    | 'subtitle-2'
+    | 'caption'
+    | 'overline'
+    | 'link-1'
+    | 'link-2'
   className?: string
 } & ComponentPropsWithoutRef<T>
 
