@@ -3,38 +3,31 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TextField } from '@/components/ui'
 
 const meta: Meta<typeof TextField> = {
-  title: 'Components/textField',
+  title: 'Components/TextField',
   component: TextField,
   tags: ['autodocs'],
-  argTypes: {
-    variant: {
-      options: ['input', 'inputWithIcon', 'search'],
-      control: { type: 'radio' },
-    },
-  },
 }
 
 export default meta
 type Story = StoryObj<typeof TextField>
 
-export const Input: Story = {
+export const Default: Story = {
   args: {
-    variant: 'input',
-    label: 'input',
-    placeholder: 'input',
+    label: 'Label',
+    placeholder: 'Placeholder',
   },
 }
-export const InputWithIcon: Story = {
+export const Password: Story = {
   args: {
-    variant: 'inputWithIcon',
-    label: 'inputWithIcon',
-    placeholder: 'inputWithIcon',
+    label: 'Label',
+    placeholder: 'Password',
+    type: 'password',
   },
 }
-export const Search: Story = {
+export const Error: Story = {
   args: {
-    variant: 'search',
-    label: 'search',
-    placeholder: 'search',
+    label: 'Input with error',
+    value: 'Wrong mesage',
+    errorMessage: 'ErrorMessage',
   },
 }

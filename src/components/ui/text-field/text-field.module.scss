@@ -1,83 +1,75 @@
-.inputContainer {
+.root {
+  width: 100%;
+}
+
+.fieldContainer {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 }
 
-.label {
-  color: var(--color-dark-100);
-}
+.field {
+  width: 100%;
+  padding: 6px 12px;
 
-.default {
-  border: 1px solid var(--color-dark-100);
-  border-radius: 2px;
-}
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-light-100);
 
-.error {
-  color: var(--color-danger-300);
-  border: 2px solid var(--color-danger-300);
-  border-radius: 2px;
-}
-
-input {
   background: transparent;
+  border: 1px solid var(--color-dark-300);
+  outline: 0;
 
-  &:active {
-    background: transparent;
-    border: 2px solid var(--color-light-100);
-    border-radius: 2px;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: var(--color-dark-100);
+  }
+
+  &:focus-visible {
+    border-color: var(--color-outline-focus);
+    outline: 1px solid var(--color-outline-focus);
   }
 
   &:hover {
-    background: var(--color-dark-500);
-    border: 1px solid var(--color-dark-100);
-    border-radius: 2px;
+    background: var(--color-dark-700);
   }
 
-  &:focus {
-    background: transparent;
-    border: 2px solid var(--color-info-500);
-    border-radius: 2px;
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    border: 1px solid var(--color-dark-100);
-    border-radius: 2px;
+  &.error {
+    color: var(--color-danger-300);
+    border-color: var(--color-danger-300);
   }
 }
 
-.error::placeholder {
-  position: relative;
-  left: 28px;
-  color: var(--color-danger-300);
+.label {
+  margin-bottom: 1px;
+  color: var(--color-dark-100);
 }
 
-.search::placeholder {
-  position: relative;
-  left: 30px;
-}
-
-.registrationEye {
+.showPassword {
   cursor: pointer;
 
   position: absolute;
-  top: 28px;
-  right: 10px;
+  top: 50%;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(-50%);
 
-  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  padding: 0;
 
-  width: 16px;
+  background: transparent;
+  border: 0;
+  outline: 0;
 
-  fill: var(--color-light-100);
+  &:focus-visible {
+    outline: var(--outline-focus);
+  }
 }
 
-.searchIcon {
-  position: absolute;
-  top: 28px;
-  left: 10px;
-
-  width: 16px;
-
-  fill: var(--color-light-100);
+.registrationEye {
+  fill: white;
 }
