@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ComponentPropsWithoutRef, FC } from 'react'
 
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
@@ -11,21 +11,16 @@ import { Typography } from '@/components/ui/typography'
 
 type CheckboxProps = {
   checked?: boolean
-  onChange?: (checked: boolean) => void
+  onCheckedChange?: (value: boolean) => void
   disabled?: boolean
   required?: boolean
   label?: string
   className?: string
-}
+} & ComponentPropsWithoutRef<'input'>
 
-export const Checkbox: FC<CheckboxProps> = ({
-  label = '',
-  checked,
-  onChange,
-  disabled,
-  required,
-  className,
-}) => {
+export const Checkbox: FC<
+  CheckboxProps & Omit<ComponentPropsWithoutRef<'input'>, keyof CheckboxProps>
+> = ({ label = '', checked, onCheckedChange, disabled, required, className }) => {
   const classNames = {
     container: clsx(s.container, className),
     buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled),
@@ -43,7 +38,7 @@ export const Checkbox: FC<CheckboxProps> = ({
               id="c1"
               className={classNames.root}
               checked={checked}
-              onCheckedChange={onChange}
+              onCheckedChange={onCheckedChange}
               required={required}
               disabled={disabled}
             >

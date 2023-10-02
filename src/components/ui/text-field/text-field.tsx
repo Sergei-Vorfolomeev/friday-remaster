@@ -5,7 +5,6 @@ import { clsx } from 'clsx'
 import s from './text-field.module.scss'
 
 import { EyeIcon } from '@/common/components/eye-icon'
-import { SearchIcon } from '@/common/icons/search-icon'
 import { Typography } from '@/components/ui'
 
 type TextFieldProps = {

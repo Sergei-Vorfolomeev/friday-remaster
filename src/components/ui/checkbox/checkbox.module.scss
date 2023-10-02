@@ -61,7 +61,6 @@
         cursor: initial;
       }
 
-      &:focus-within,
       &:hover:not(.disabled),
       &:hover .root:not([data-state='checked']) {
         background-color: var(--color-dark-500);
