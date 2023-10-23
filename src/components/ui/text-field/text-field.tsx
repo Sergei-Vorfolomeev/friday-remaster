@@ -7,7 +7,7 @@ import s from './text-field.module.scss'
 import { EyeIcon } from '@/common/components/eye-icon'
 import { Typography } from '@/components/ui'
 
-type TextFieldProps = {
+export type TextFieldProps = {
   label?: string
   labelProps?: ComponentProps<'label'>
   containerProps?: ComponentProps<'div'>
@@ -74,6 +74,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
               <EyeIcon isHidden={showPassword} className={s.registrationEye} />
             </button>
           )}
+          {errorMessage && <Typography variant={'error'}>{errorMessage}</Typography>}
         </div>
       </div>
     )

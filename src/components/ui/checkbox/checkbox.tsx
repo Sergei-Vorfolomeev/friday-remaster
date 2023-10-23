@@ -9,7 +9,7 @@ import s from './checkbox.module.scss'
 import { CheckedIcon } from '@/common/icons/checked-icon'
 import { Typography } from '@/components/ui/typography'
 
-type CheckboxProps = {
+export type CheckboxProps = {
   checked?: boolean
   onCheckedChange?: (value: boolean) => void
   disabled?: boolean
