@@ -1,3 +1,5 @@
+import { ComponentPropsWithoutRef } from 'react'
+
 import * as RadioGroupRadix from '@radix-ui/react-radio-group'
 import { clsx } from 'clsx'
 
@@ -5,10 +7,10 @@ import s from './radio-group.module.scss'
 
 import { Typography } from '@/components/ui'
 
-type RadioGroupProps = {
+export type RadioGroupProps = {
   options: string[]
-  disabled: boolean
-}
+  disabled?: boolean
+} & ComponentPropsWithoutRef<'button'>
 
 export const RadioGroup = ({ options, disabled = false }: RadioGroupProps) => {
   const classNames = {
@@ -41,30 +43,6 @@ export const RadioGroup = ({ options, disabled = false }: RadioGroupProps) => {
             </div>
           )
         })}
-        {/*<div>*/}
-        {/*  <RadioGroupRadix.Item className={classNames.item} value="default" id="r1">*/}
-        {/*    <RadioGroupRadix.Indicator className={classNames.indicator} />*/}
-        {/*  </RadioGroupRadix.Item>*/}
-        {/*  <label className="Label" htmlFor="r1">*/}
-        {/*    Default*/}
-        {/*  </label>*/}
-        {/*</div>*/}
-        {/*<div style={{ display: 'flex', alignItems: 'center' }}>*/}
-        {/*  <RadioGroupRadix.Item className="RadioGroupItem" value="comfortable" id="r2">*/}
-        {/*    <RadioGroupRadix.Indicator className={s.indicator} />*/}
-        {/*  </RadioGroupRadix.Item>*/}
-        {/*  <label className="Label" htmlFor="r2">*/}
-        {/*    Comfortable*/}
-        {/*  </label>*/}
-        {/*</div>*/}
-        {/*<div style={{ display: 'flex', alignItems: 'center' }}>*/}
-        {/*  <RadioGroupRadix.Item className="RadioGroupItem" value="compact" id="r3">*/}
-        {/*    <RadioGroupRadix.Indicator className={s.indicator} />*/}
-        {/*  </RadioGroupRadix.Item>*/}
-        {/*  <label className="Label" htmlFor="r3">*/}
-        {/*    Compact*/}
-        {/*  </label>*/}
-        {/*</div>*/}
       </RadioGroupRadix.Root>
     </form>
   )
