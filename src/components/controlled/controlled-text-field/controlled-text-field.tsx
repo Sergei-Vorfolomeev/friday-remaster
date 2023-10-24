@@ -9,13 +9,13 @@ type ControlledTextFieldProps<T extends FieldValues> = Pick<
   Omit<TextFieldProps, 'value' | 'onValueChange'>
 
 export const ControlledTextField = <T extends FieldValues>({
-  control,
   name,
+  control,
 }: ControlledTextFieldProps<T>) => {
   const {
     fieldState: { error },
     field: { value, onChange },
-  } = useController({ control, name })
+  } = useController({ name, control })
 
   return (
     <TextField value={value} onValueChange={onChange} errorMessage={error?.message} id={name} />
