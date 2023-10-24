@@ -11,6 +11,7 @@ type ControlledTextFieldProps<T extends FieldValues> = Pick<
 export const ControlledTextField = <T extends FieldValues>({
   name,
   control,
+  ...rest
 }: ControlledTextFieldProps<T>) => {
   const {
     fieldState: { error },
@@ -18,6 +19,12 @@ export const ControlledTextField = <T extends FieldValues>({
   } = useController({ name, control })
 
   return (
-    <TextField value={value} onValueChange={onChange} errorMessage={error?.message} id={name} />
+    <TextField
+      {...rest}
+      value={value}
+      onValueChange={onChange}
+      errorMessage={error?.message}
+      id={name}
+    />
   )
 }
