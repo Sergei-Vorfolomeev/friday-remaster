@@ -26,7 +26,15 @@ export const SignIn = ({ onSubmit }: SignInProps) => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>({ resolver: zodResolver(loginSchema) })
+  } = useForm<FormValues>({
+    resolver: zodResolver(loginSchema),
+    mode: 'onSubmit',
+    defaultValues: {
+      email: '',
+      password: '',
+      rememberMe: false,
+    },
+  })
 
   return (
     <Card className={s.card}>
@@ -55,8 +63,8 @@ export const SignIn = ({ onSubmit }: SignInProps) => {
           className={s.checkbox}
         />
         <Typography
-          as={Link}
-          to="/recover-password"
+          as={'a'}
+          href="/recover-password"
           variant={'body-2'}
           className={s.forgotPasswordLink}
         >
@@ -65,13 +73,13 @@ export const SignIn = ({ onSubmit }: SignInProps) => {
         <Button type={'submit'} fullWidth>
           Sign In
         </Button>
-        <Typography variant={'body-2'} className={s.caption}>
-          Don&apos;t have an account?
-        </Typography>
-        <Typography as={Link} to="/sign-up" variant={'body-2'} className={s.signUpLink}>
-          Sign Up
-        </Typography>
       </form>
+      <Typography variant={'body-2'} className={s.caption}>
+        Don&apos;t have an account?
+      </Typography>
+      <Typography as={Link} to="/sign-up" variant={'body-2'} className={s.signUpLink}>
+        Sign Up
+      </Typography>
     </Card>
   )
 }
