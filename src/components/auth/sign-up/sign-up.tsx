@@ -4,8 +4,8 @@ import { z } from 'zod'
 
 import s from './sign-up.module.scss'
 
-import { ControlledTextField } from '@/components/controlled/controlled-text-field'
 import { Button, Card, Typography } from '@/components/ui'
+import { ControlledTextField } from '@/components/ui/controlled/controlled-text-field'
 
 const signUpSchema = z
   .object({

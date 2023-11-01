@@ -4,8 +4,8 @@ import { z } from 'zod'
 
 import s from './recover-password.module.scss'
 
-import { ControlledTextField } from '@/components/controlled/controlled-text-field'
 import { Button, Card, Typography } from '@/components/ui'
+import { ControlledTextField } from '@/components/ui/controlled/controlled-text-field'
 
 const schema = z.object({
   email: z.string().email('Invalid email'),

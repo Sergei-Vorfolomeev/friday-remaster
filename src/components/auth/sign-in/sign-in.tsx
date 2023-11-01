@@ -4,9 +4,9 @@ import { z } from 'zod'
 
 import s from './sign-in.module.scss'
 
-import { ControlledCheckbox } from '@/components/controlled/controlled-checkbox/controlled-checkbox'
-import { ControlledTextField } from '@/components/controlled/controlled-text-field/controlled-text-field'
 import { Button, Card, Typography } from '@/components/ui'
+import { ControlledCheckbox } from '@/components/ui/controlled/controlled-checkbox/controlled-checkbox'
+import { ControlledTextField } from '@/components/ui/controlled/controlled-text-field/controlled-text-field'
 
 const loginSchema = z.object({
   email: z.string().email(),
