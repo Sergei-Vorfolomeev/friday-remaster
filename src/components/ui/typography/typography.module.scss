@@ -1,5 +1,5 @@
 @mixin typography($fontSize, $lineHeight, $fontWeight) {
-  //margin: 0;
+  margin: 0;
 
   font-size: $fontSize;
   font-weight: $fontWeight;
@@ -52,7 +52,7 @@
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
 
   cursor: pointer;
-  color: var(--color-text-link);
+  color: var(--color-primary);
   text-decoration: underline;
 }
 

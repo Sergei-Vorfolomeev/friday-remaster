@@ -1,127 +1,125 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { StoryObj } from '@storybook/react'
 
-import { Typography } from './'
+import { Typography } from '@/components/ui/typography/typography'
 
-const meta: Meta<typeof Typography> = {
-  title: 'Components/Typography',
+const meta = {
+  title: 'Components/UI/Typography',
   component: Typography,
   tags: ['autodocs'],
   argTypes: {
     variant: {
+      control: { type: 'radio' },
       options: [
         'large',
         'h1',
         'h2',
         'h3',
-        'body-1',
-        'body-2',
-        'subtitle-1',
-        'subtitle-2',
+        'body1',
+        'body2',
+        'subtitle1',
+        'subtitle2',
         'caption',
         'overline',
-        'link-1',
-        'link-2',
+        'link1',
+        'link2',
+        'error',
       ],
-      control: { type: 'radio' },
     },
   },
 }
 
 export default meta
-type Story = StoryObj<typeof Typography>
+type Story = StoryObj<typeof meta>
 
 export const Large: Story = {
   args: {
-    as: 'h1',
     variant: 'large',
-    children: 'Example',
+    children: 'Large content',
+    disabled: false,
   },
 }
 
 export const H1: Story = {
   args: {
-    as: 'h1',
     variant: 'h1',
-    children: 'Example',
+    children: 'h1 content',
+    disabled: false,
   },
 }
-
 export const H2: Story = {
   args: {
-    as: 'h2',
     variant: 'h2',
-    children: 'Example',
+    children: 'h2 content',
+    disabled: false,
   },
 }
-
 export const H3: Story = {
   args: {
-    as: 'h3',
     variant: 'h3',
-    children: 'Example',
+    children: 'h3 content',
+    disabled: false,
   },
 }
-
 export const Body1: Story = {
   args: {
-    as: 'span',
-    variant: 'body-1',
-    children: 'Example',
+    variant: 'body1',
+    children: 'body1 content',
+    disabled: false,
   },
 }
-
 export const Body2: Story = {
   args: {
-    as: 'span',
-    variant: 'body-2',
-    children: 'Example',
+    variant: 'body2',
+    children: 'body2 content',
+    disabled: false,
   },
 }
-
 export const Subtitle1: Story = {
   args: {
-    as: 'span',
-    variant: 'subtitle-1',
-    children: 'Example',
+    variant: 'subtitle1',
+    children: 'subtitle1 content',
+    disabled: false,
   },
 }
-
 export const Subtitle2: Story = {
   args: {
-    as: 'span',
-    variant: 'subtitle-2',
-    children: 'Example',
+    variant: 'subtitle2',
+    children: 'subtitle2 content',
+    disabled: false,
   },
 }
-
 export const Caption: Story = {
   args: {
-    as: 'span',
     variant: 'caption',
-    children: 'Example',
+    children: 'caption content',
+    disabled: false,
   },
 }
-
 export const Overline: Story = {
   args: {
-    as: 'span',
     variant: 'overline',
-    children: 'Example',
+    children: 'overline content',
+    disabled: false,
   },
 }
-
 export const Link1: Story = {
   args: {
-    as: 'a',
-    variant: 'link-1',
-    children: 'Example',
+    variant: 'link1',
+    children: 'link1 content',
+    disabled: false,
   },
 }
-
 export const Link2: Story = {
   args: {
-    as: 'a',
-    variant: 'link-2',
-    children: 'Example',
+    variant: 'link2',
+    children: 'link2 content',
+    disabled: false,
+  },
+}
+export const Error: Story = {
+  args: {
+    variant: 'error',
+    children: 'error content',
+    disabled: false,
   },
 }

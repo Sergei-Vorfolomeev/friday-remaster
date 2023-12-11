@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from './'
 
-const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+const meta = {
+  title: 'Components/UI/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
@@ -11,8 +11,11 @@ const meta: Meta<typeof Button> = {
       options: ['primary', 'secondary', 'tertiary', 'link'],
       control: { type: 'radio' },
     },
+    fullWidth: {
+      control: { type: 'boolean' },
+    },
   },
-}
+} satisfies Meta<typeof Button>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -53,13 +56,5 @@ export const FullWidth: Story = {
     children: 'Full Width Button',
     disabled: false,
     fullWidth: true,
-  },
-}
-
-export const AsLink: Story = {
-  args: {
-    variant: 'primary',
-    children: 'Link that looks like a button',
-    as: 'a',
   },
 }
