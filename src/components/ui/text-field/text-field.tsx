@@ -55,7 +55,6 @@ export const TextField = ({
           {label}
         </Typography>
       )}
-
       <div className={classNames.fieldContainer}>
         {search && <Search className={classNames.searchIcon} />}
         <input

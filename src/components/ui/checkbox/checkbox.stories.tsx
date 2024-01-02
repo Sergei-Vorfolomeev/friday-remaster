@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from '@/components/ui/checkbox/checkbox'
 
 const meta = {
-  title: 'Components/Checkbox',
+  title: 'Components/UI/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
 } satisfies Meta<typeof Checkbox>
