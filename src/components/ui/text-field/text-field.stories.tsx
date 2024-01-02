@@ -11,6 +11,10 @@ const meta = {
       control: { type: 'radio' },
       options: ['default', 'password', 'search'],
     },
+    type: {
+      control: { type: 'radio' },
+      options: ['default', 'password', 'search'],
+    },
   },
 }
 
