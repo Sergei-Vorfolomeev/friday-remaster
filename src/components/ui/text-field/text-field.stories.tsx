@@ -7,13 +7,9 @@ const meta = {
   component: TextField,
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: { type: 'radio' },
-      options: ['default', 'password', 'search'],
-    },
     type: {
       control: { type: 'radio' },
-      options: ['default', 'password', 'search'],
+      options: ['text', 'password', 'search'],
     },
   },
 }
@@ -24,6 +20,6 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    variant: 'default',
+    type: 'text',
   },
 }

@@ -13,7 +13,6 @@ type TextFieldProps = {
   containerProps?: ComponentProps<'div'>
   labelProps?: ComponentProps<'label'>
   label?: string
-  variant?: 'default' | 'password' | 'search'
   search?: boolean
   errorMessage?: string
 } & ComponentPropsWithoutRef<'input'>
@@ -22,7 +21,6 @@ export const TextField = ({
   labelProps,
   errorMessage,
   type,
-  variant = 'default',
   containerProps,
   className,
   onChange,
