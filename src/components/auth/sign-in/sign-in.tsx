@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { ControlledCheckbox } from '@/components/controlled/controlled-checkbox/controlled-checkbox'
+import { ControlledTextField } from '@/components/controlled/controlled-text-field/controlled-text-field'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { TextField } from '@/components/ui/text-field'
 
 const signInSchema = z.object({
   email: z.string().email({ message: 'Wrong email' }),
@@ -18,7 +18,6 @@ type FormValues = z.infer<typeof signInSchema>
 export const SignIn = () => {
   const {
     control,
-    register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({
@@ -38,9 +37,15 @@ export const SignIn = () => {
   return (
     <Card>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextField {...register('email')} label={'Email'} errorMessage={errors.email?.message} />
-        <TextField
-          {...register('password')}
+        <ControlledTextField
+          control={control}
+          name={'email'}
+          label={'Email'}
+          errorMessage={errors.email?.message}
+        />
+        <ControlledTextField
+          control={control}
+          name={'password'}
           label={'Password'}
           errorMessage={errors.password?.message}
         />

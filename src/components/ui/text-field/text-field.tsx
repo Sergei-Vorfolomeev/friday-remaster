@@ -9,7 +9,7 @@ import EyeClose from '@/assets/icons/eye-close'
 import Search from '@/assets/icons/search'
 import { Typography } from '@/components/ui/typography'
 
-type TextFieldProps = {
+export type TextFieldProps = {
   containerProps?: ComponentProps<'div'>
   labelProps?: ComponentProps<'label'>
   label?: string
