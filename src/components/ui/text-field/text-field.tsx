@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentProps, ComponentPropsWithoutRef, useState } from 'react'
+import { ChangeEvent, ComponentProps, ComponentPropsWithoutRef, forwardRef, useState } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -16,69 +16,65 @@ type TextFieldProps = {
   search?: boolean
   errorMessage?: string
 } & ComponentPropsWithoutRef<'input'>
-export const TextField = ({
-  label,
-  labelProps,
-  errorMessage,
-  type,
-  containerProps,
-  className,
-  onChange,
-  search,
-  ...rest
-}: TextFieldProps & Omit<ComponentPropsWithoutRef<'input'>, keyof TextFieldProps>) => {
-  const [showPassword, setShowPassword] = useState(false)
+export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+  (
+    { label, labelProps, errorMessage, type, containerProps, className, onChange, search, ...rest },
+    ref
+  ) => {
+    const [showPassword, setShowPassword] = useState(false)
 
-  const classNames = {
-    root: clsx(s.root, containerProps?.className),
-    fieldContainer: clsx(s.fieldContainer),
-    field: clsx(s.field, className, !!errorMessage && s.error, search && s.hasLeadingIcon),
-    label: clsx(s.label, labelProps?.className),
-    searchIcon: s.searchIcon,
-    error: clsx(s.error),
-  }
+    const classNames = {
+      root: clsx(s.root, containerProps?.className),
+      fieldContainer: clsx(s.fieldContainer),
+      field: clsx(s.field, className, !!errorMessage && s.error, search && s.hasLeadingIcon),
+      label: clsx(s.label, labelProps?.className),
+      searchIcon: s.searchIcon,
+      error: clsx(s.error),
+    }
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    onChange && onChange(event)
-  }
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+      onChange && onChange(event)
+    }
 
-  const finalType = (type: ComponentProps<'input'>['type'], showPassword: boolean) => {
-    if (type === 'password' && showPassword) {
-      return 'text'
-    } else return type
-  }
+    const finalType = (type: ComponentProps<'input'>['type'], showPassword: boolean) => {
+      if (type === 'password' && showPassword) {
+        return 'text'
+      } else return type
+    }
 
-  return (
-    <div className={classNames.root}>
-      {label && (
-        <Typography as={'label'} variant={'body2'} className={classNames.label}>
-          {label}
-        </Typography>
-      )}
-      <div className={classNames.fieldContainer}>
-        {search && <Search className={classNames.searchIcon} />}
-        <input
-          className={classNames.field}
-          type={finalType(type, showPassword)}
-          onChange={handleChange}
-          {...rest}
-        />
-        {type === 'password' && (
-          <button
-            className={s.showPassword}
-            type="button"
-            onClick={() => setShowPassword(prev => !prev)}
-          >
-            {showPassword ? <EyeClose /> : <Eye />}
-          </button>
+    return (
+      <div className={classNames.root}>
+        {label && (
+          <Typography as={'label'} variant={'body2'} className={classNames.label}>
+            {label}
+          </Typography>
+        )}
+        <div className={classNames.fieldContainer}>
+          {search && <Search className={classNames.searchIcon} />}
+          <input
+            ref={ref}
+            className={classNames.field}
+            type={finalType(type, showPassword)}
+            onChange={handleChange}
+            {...rest}
+          />
+          {type === 'password' && (
+            <button
+              className={s.showPassword}
+              type="button"
+              onClick={() => setShowPassword(prev => !prev)}
+            >
+              {showPassword ? <EyeClose /> : <Eye />}
+            </button>
+          )}
+        </div>
+
+        {errorMessage && (
+          <Typography variant={'error'} className={classNames.error}>
+            {errorMessage}
+          </Typography>
         )}
       </div>
-
-      {errorMessage && (
-        <Typography variant={'error'} className={classNames.error}>
-          {errorMessage}
-        </Typography>
-      )}
-    </div>
-  )
-}
+    )
+  }
+)
