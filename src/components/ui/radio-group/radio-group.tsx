@@ -35,7 +35,7 @@ type Option = {
   label: string
 }
 
-type RadioGroupProps = Omit<
+export type RadioGroupProps = Omit<
   ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>,
   'children'
 > & {
