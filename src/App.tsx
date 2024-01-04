@@ -19,5 +19,5 @@ const options = [
 ]
 
 export function App() {
-  return <RadioGroup options={options} />
+  return <SignIn />
 }
