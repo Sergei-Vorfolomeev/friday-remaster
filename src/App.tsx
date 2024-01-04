@@ -1,4 +1,5 @@
 import { SignIn } from '@/components/auth/sign-in/sign-in'
+import { SignUp } from '@/components/auth/sign-up'
 import { Checkbox } from '@/components/ui/checkbox'
 import { RadioGroup } from '@/components/ui/radio-group/radio-group'
 import { TextField } from '@/components/ui/text-field'
@@ -19,5 +20,5 @@ const options = [
 ]
 
 export function App() {
-  return <SignIn />
+  return <SignUp onSubmit={() => {}} />
 }

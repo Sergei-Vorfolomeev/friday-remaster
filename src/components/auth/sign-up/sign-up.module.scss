@@ -17,15 +17,15 @@
     margin-bottom: 18px;
 
     .email {
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .password {
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
-    .rememberMe {
-      margin-bottom: 20px;
+    .confirmPassword {
+      margin-bottom: 24px;
     }
 
     .forgotPasswordLink {
@@ -41,7 +41,7 @@
     text-align: center;
   }
 
-  .signUpLink {
+  .signInLink {
     display: flex;
     justify-content: center;
     color: var(--color-accent-500);
