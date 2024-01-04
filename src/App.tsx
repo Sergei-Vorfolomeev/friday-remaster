@@ -1,3 +1,4 @@
+import { NewPassword } from '@/components/auth/new-password'
 import { RecoverPassword } from '@/components/auth/recover-password'
 import { SignIn } from '@/components/auth/sign-in/sign-in'
 import { SignUp } from '@/components/auth/sign-up'
@@ -21,5 +22,5 @@ const options = [
 ]
 
 export function App() {
-  return <RecoverPassword onSubmit={() => {}} />
+  return <NewPassword onSubmit={() => {}} />
 }
