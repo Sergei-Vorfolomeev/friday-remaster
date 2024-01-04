@@ -1,3 +1,4 @@
+import { RecoverPassword } from '@/components/auth/recover-password'
 import { SignIn } from '@/components/auth/sign-in/sign-in'
 import { SignUp } from '@/components/auth/sign-up'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -20,5 +21,5 @@ const options = [
 ]
 
 export function App() {
-  return <SignUp onSubmit={() => {}} />
+  return <RecoverPassword onSubmit={() => {}} />
 }
