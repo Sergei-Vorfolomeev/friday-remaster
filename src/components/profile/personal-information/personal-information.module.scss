@@ -1,0 +1,89 @@
+.card {
+  width: 420px;
+  height: 420px;
+  padding: 30px;
+
+  .title {
+    text-align: center;
+  }
+
+  .photoContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 6px;
+
+    > div {
+      position: relative;
+
+      > img {
+        width: 96px;
+        height: 96px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .editAvatarButton {
+        all: unset;
+
+        cursor: pointer;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        width: 32px;
+        height: 32px;
+
+        &:focus-visible {
+          outline: var(--outline-focus);
+        }
+      }
+    }
+  }
+
+  .nameInput {
+    padding-bottom: 20px;
+  }
+
+  .nameWithEditButton {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+    .name {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .editNameButton {
+      all: unset;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 16px;
+      height: 16px;
+
+      &:focus-visible {
+        outline: var(--outline-focus);
+      }
+    }
+  }
+
+  .email {
+    margin-bottom: 13px;
+    color: var(--color-dark-100);
+    text-align: center;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
