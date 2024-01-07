@@ -1,6 +1,12 @@
-import { SignIn } from '@/components/auth/sign-in/sign-in'
+import { Provider } from 'react-redux'
+
 import { Router } from '@/router'
+import { store } from '@/services/store'
 
 export function App() {
-  return <Router />
+  return (
+    <Provider store={store}>
+      <Router />
+    </Provider>
+  )
 }
