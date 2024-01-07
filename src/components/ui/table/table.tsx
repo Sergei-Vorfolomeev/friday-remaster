@@ -1,8 +1,10 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { ComponentProps, ComponentPropsWithoutRef, ElementRef, FC, forwardRef } from 'react'
 
 import { clsx } from 'clsx'
 
 import s from './table.module.scss'
+
+import { Typography } from '@/components/ui/typography'
 
 export const Table = forwardRef<HTMLTableElement, ComponentPropsWithoutRef<'table'>>(
   ({ className, ...rest }, ref) => {
@@ -55,3 +57,23 @@ export const TableCell = forwardRef<HTMLTableDataCellElement, ComponentPropsWith
     return <td {...rest} className={classNames.cell} ref={ref}></td>
   }
 )
+
+export const TableEmpty: FC<ComponentProps<'div'> & { mt?: string; mb?: string }> = ({
+  className,
+  mt = '89px',
+  mb,
+}) => {
+  const classNames = {
+    empty: clsx(s.empty, className),
+  }
+
+  return (
+    <Typography
+      variant={'h2'}
+      className={classNames.empty}
+      style={{ marginTop: mt, marginBottom: mb }}
+    >
+      Пока тут еще нет данных! :(
+    </Typography>
+  )
+}
