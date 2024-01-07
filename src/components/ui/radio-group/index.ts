@@ -1,1 +1,1 @@
-export * from 'src/components/ui/radio-group/radio-group2'
+export * from './radio-group'
