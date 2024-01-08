@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { GetDecksResponse } from '@/services/decks/decks.types'
+import {
+  GetDeckByIdRequestArgs,
+  GetDeckResponseItems,
+  GetDecksRequestArgs,
+  GetDecksResponse,
+} from '@/services/decks/decks.types'
 
 export const baseApi = createApi({
   reducerPath: 'baseApi',
@@ -10,10 +15,16 @@ export const baseApi = createApi({
     prepareHeaders: headers => headers.append('x-auth-skip', 'true'),
   }),
   endpoints: builder => ({
-    getDecks: builder.query<GetDecksResponse, void>({
-      query: () => '/v1/decks',
+    getDecks: builder.query<GetDecksResponse, GetDecksRequestArgs | void>({
+      query: args => ({
+        url: '/v1/decks',
+        params: args ?? {},
+      }),
+    }),
+    getDeckById: builder.query<GetDeckResponseItems, GetDeckByIdRequestArgs>({
+      query: ({ id }) => ({ url: `/v1/decks/${id}` }),
     }),
   }),
 })
 
-export const { useGetDecksQuery } = baseApi
+export const { useGetDecksQuery, useGetDeckByIdQuery } = baseApi
